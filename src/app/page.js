@@ -1,11 +1,17 @@
-import React from 'react'
+import CustomCursor from "@/components/CustomCursor"
+import Navbar from "@/components/Navbar"
+import ParticleBackground from "@/components/ParticleBackground"
+import Hero from "@/sections/Hero"
 
-const page = () => {
+const Page = () => { // Changed to uppercase 'Page'
   return (
-    <div>
-      
+    <div className='min-h-screen w-full relative'>
+     
+      <CustomCursor />
+    <Navbar/>
+    <Hero/>
     </div>
   )
 }
 
-export default page
+export default Page
