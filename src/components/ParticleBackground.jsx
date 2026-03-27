@@ -42,6 +42,7 @@ const ParticleBackground = () => {
         const distance = Math.sqrt(dx * dx + dy * dy);
         const maxDistance = 200;
 
+        // Mouse Repulsion Logic
         if (distance < maxDistance) {
           const force = (maxDistance - distance) / maxDistance;
           const angle = Math.atan2(dy, dx);
@@ -50,28 +51,31 @@ const ParticleBackground = () => {
           this.vy += Math.sin(angle) * force * 0.1;
         }
 
+        // Apply velocities
         this.x += this.vx + this.baseSpeedX;
         this.y += this.vy + this.baseSpeedY;
 
+        // Friction / Dampening
         this.vx *= 0.95;
         this.vy *= 0.95;
 
         const margin = 10;
         
+        // Edge Collision Logic with "Anti-Stick" nudge
         if (this.x >= canvas.width - margin) {
           this.x = canvas.width - margin;
-          this.vx = -Math.abs(this.vx) * 0.8;
+          this.vx = -Math.abs(this.vx) * 0.8 - 0.1; // Reverse and nudge left
         } else if (this.x <= margin) {
           this.x = margin;
-          this.vx = Math.abs(this.vx) * 0.8; 
+          this.vx = Math.abs(this.vx) * 0.8 + 0.1; // Reverse and nudge right
         }
         
         if (this.y >= canvas.height - margin) {
           this.y = canvas.height - margin;
-          this.vy = -Math.abs(this.vy) * 0.8; 
+          this.vy = -Math.abs(this.vy) * 0.8 - 0.1; // Reverse and nudge up
         } else if (this.y <= margin) {
           this.y = margin;
-          this.vy = Math.abs(this.vy) * 0.8; 
+          this.vy = Math.abs(this.vy) * 0.8 + 0.1; // Reverse and nudge down
         }
       }
 
@@ -120,7 +124,7 @@ const ParticleBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      className='fixed top-0 left-0 w-full h-full pointer-events-none z-0 bg-black text-white'
+      className='fixed top-0 left-0 w-full h-full pointer-events-none z-99 bg-black text-white'
     />
   );
 };

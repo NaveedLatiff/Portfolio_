@@ -43,3 +43,18 @@ body {
 .blink-2 {
   animation: blinkAnim 6s ease-in-out infinite;
 }
+
+/* Robot floating/jumping animation */
+@keyframes robotFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+.robot-float {
+  animation: robotFloat 3s ease-in-out infinite;
+}
+

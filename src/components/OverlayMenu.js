@@ -1,13 +1,20 @@
 'use client';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react'; 
 import Link from 'next/link';
 import { IoClose } from 'react-icons/io5';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const OverlayMenu = ({ isOpen, toggleMenu, menuIconPosition }) => {
-  
+  const [coords, setCoords] = useState({ x: 0, y: 0 });
+
   useEffect(() => {
     if (isOpen) {
+      if (typeof window !== 'undefined') {
+        setCoords({
+          x: (menuIconPosition.x / window.innerWidth) * 100,
+          y: (menuIconPosition.y / window.innerHeight) * 100,
+        });
+      }
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
@@ -15,36 +22,40 @@ const OverlayMenu = ({ isOpen, toggleMenu, menuIconPosition }) => {
     return () => {
       document.body.style.overflow = 'unset';
     };
-  }, [isOpen]);
+  }, [isOpen, menuIconPosition]);
 
   const menuItems = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Projects', href: '/projects' },
-    { name: 'Skills', href: '/skills' },
-    { name: 'Testimonials', href: '/testimonials' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Home', id: 'home' },
+    { name: 'About', id: 'about' },
+    { name: 'Projects', id: 'projects' },
+    { name: 'Skills', id: 'skills' },
+    { name: 'Contact', id: 'contact' },
   ];
 
-  const xPercent = (menuIconPosition.x / window.innerWidth) * 100;
-  const yPercent = (menuIconPosition.y / window.innerHeight) * 100;
+  const handleScroll = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    toggleMenu();
+  };
 
   const overlayVariants = {
     hidden: {
-      clipPath: `circle(0% at ${xPercent}% ${yPercent}%)`,
+      clipPath: `circle(0% at ${coords.x}% ${coords.y}%)`,
       transition: {
         duration: 0.6,
         ease: 'easeInOut',
       },
     },
     visible: {
-      clipPath: `circle(150% at ${xPercent}% ${yPercent}%)`,
+      clipPath: `circle(150% at ${coords.x}% ${coords.y}%)`,
       transition: {
         duration: 0.6,
         ease: 'easeInOut',
       },
     },
-  };
+  }
 
   const linkVariants = {
     hidden: {
@@ -70,7 +81,7 @@ const OverlayMenu = ({ isOpen, toggleMenu, menuIconPosition }) => {
           initial="hidden"
           animate="visible"
           exit="hidden"
-          className='fixed inset-0 z-[100]'
+          className='fixed inset-0 z-[9999]'
           style={{
             background: 'rgba(0,0,0,0.95)',
           }}
@@ -78,13 +89,16 @@ const OverlayMenu = ({ isOpen, toggleMenu, menuIconPosition }) => {
           <div className='absolute top-0 left-0 w-full'>
             <div className='container mx-auto px-4 md:px-8 lg:px-12 py-3 flex justify-between items-center'>
               
-              <Link href="/" onClick={toggleMenu} className='text-2xl font-bold text-white italic font-poppins'>
+              <button 
+                onClick={() => handleScroll('home')} 
+                className='text-2xl font-bold text-white italic font-poppins bg-transparent border-none cursor-pointer'
+              >
                 NAVEED LATIF
-              </Link>
+              </button>
 
               <button
                 onClick={toggleMenu}
-                className='flex items-center justify-center w-12 h-12 rounded-full  text-white hover:bg-white/20 transition-all duration-300 cursor-pointer'
+                className='flex items-center justify-center w-12 h-12 rounded-full text-white hover:bg-white/20 transition-all duration-300 cursor-pointer'
               >
                 <IoClose size={28} />
               </button>
@@ -102,13 +116,12 @@ const OverlayMenu = ({ isOpen, toggleMenu, menuIconPosition }) => {
                   animate="visible"
                   exit="hidden"
                 >
-                  <Link
-                    href={item.href}
-                    onClick={toggleMenu}
-                    className= 'block  text-2xl md:text-3xl font-poppins text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:to-blue-500 transition-all duration-300 '
+                  <button
+                    onClick={() => handleScroll(item.id)}
+                    className='block w-full bg-transparent border-none cursor-pointer text-2xl md:text-3xl font-poppins text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:to-blue-500 transition-all duration-300'
                   >
                     {item.name}
-                  </Link>
+                  </button>
                 </motion.div>
               ))}
             </div>
@@ -119,4 +132,4 @@ const OverlayMenu = ({ isOpen, toggleMenu, menuIconPosition }) => {
   );
 };
 
-export default OverlayMenu;
+export default OverlayMenu

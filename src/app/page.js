@@ -2,15 +2,35 @@ import CustomCursor from "@/components/CustomCursor"
 import Navbar from "@/components/Navbar"
 import ParticleBackground from "@/components/ParticleBackground"
 import Hero from "@/sections/Hero"
+import About from "@/sections/About"
+import Contact from "@/sections/Contact"
+import Skills from "@/sections/Skills"
+import Projects from "@/sections/Projects"
+import Footer from "@/sections/Footer"
 
-const Page = () => { // Changed to uppercase 'Page'
+const Page = () => {
   return (
-    <div className='min-h-screen w-full relative'>
-     
+  <>
+    <ParticleBackground />
       <CustomCursor />
-    <Navbar/>
-    <Hero/>
-    </div>
+      <section id="home">
+        <Navbar />
+        <Hero />
+      </section>
+      <section id="about">
+        <About />
+      </section>
+      <section id="skills">
+        <Skills />
+      </section>
+      <section  id="contact">
+        <Contact />
+      </section>
+      <section id="projects">
+        <Projects/>
+      </section>
+      <Footer/>
+  </>
   )
 }
 
