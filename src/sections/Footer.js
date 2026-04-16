@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import Link from 'next/link';
 import { FaLinkedin, FaGithub, FaInstagram, FaFacebook, FaHeart } from 'react-icons/fa';
 import { HiMail, HiPhone, HiLocationMarker } from 'react-icons/hi';
 
@@ -41,7 +40,7 @@ const Footer = () => {
                             <a href="https://www.instagram.com/_.naveed._69" target='_blank' rel="noopener noreferrer" className='text-gray-400 hover:text-green-400 transition-colors duration-300'>
                                 <FaInstagram size={20} />
                             </a>
-                            <a href="https://facebook.com/naveedlatif" target='_blank' rel="noopener noreferrer" className='text-gray-400 hover:text-green-400 transition-colors duration-300'>
+                            <a href="https://www.facebook.com/naveed.bhai.900" target='_blank' rel="noopener noreferrer" className='text-gray-400 hover:text-green-400 transition-colors duration-300'>
                                 <FaFacebook size={20} />
                             </a>
                         </div>

@@ -1,7 +1,7 @@
 'use client';
 import React, { useRef, useState } from 'react';
 import { FaUser, FaEnvelope, FaPen, FaCommentDots, FaPaperPlane, FaCheckCircle, FaExclamationCircle, FaTimes } from 'react-icons/fa';
-import img from '../assests/contact-image.png'; 
+import img from '../assests/contact-image.png';
 import Image from 'next/image';
 import emailjs from '@emailjs/browser';
 
@@ -17,7 +17,7 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    
+
     const formData = new FormData(formRef.current);
     const name = formData.get('user_name');
     const email = formData.get('user_email');
@@ -30,9 +30,9 @@ const Contact = () => {
 
     setLoading(true);
 
-    const SERVICE_ID = "service_aa5fvjh"; 
-    const TEMPLATE_ID = "template_tzci1gc";
-    const PUBLIC_KEY = "pIpR9snUIaUN5yP_O";
+    const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID;
+    const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID
+    const PUBLIC_KEY = process.env.NEXT_PUBLIC_PUBLIC_KEY
 
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
       .then(() => {
@@ -50,11 +50,10 @@ const Contact = () => {
 
   return (
     <section id="contact" className="min-h-screen w-full relative z-999 flex flex-col items-center py-5 overflow-hidden">
-      
+
       {notification.show && (
-        <div className={`fixed top-5 right-5 z-[1000] flex items-center gap-3 px-6 py-4 rounded-2xl shadow-2xl transition-all duration-500 animate-in fade-in slide-in-from-right-10 ${
-          notification.type === 'success' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
-        }`}>
+        <div className={`fixed top-5 right-5 z-[1000] flex items-center gap-3 px-6 py-4 rounded-2xl shadow-2xl transition-all duration-500 animate-in fade-in slide-in-from-right-10 ${notification.type === 'success' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
+          }`}>
           {notification.type === 'success' ? <FaCheckCircle /> : <FaExclamationCircle />}
           <p className="font-roboto font-medium">{notification.message}</p>
           <button onClick={() => setNotification({ ...notification, show: false })} className="ml-2">
@@ -73,7 +72,7 @@ const Contact = () => {
         }
       `}</style>
 
-      <div className='text-center mb-6 md:mb-9 relative z-20'>
+      <div className='text-center mb-6 md:mb-9 relative z-20 '>
         <h2 className='text-green-400 text-lg sm:text-xl font-semibold mb-2 font-roboto tracking-wide uppercase'>Let's Collaborate</h2>
         <h1 className='text-4xl sm:text-5xl md:text-6xl font-bold text-white font-poppins'>Contact Me</h1>
       </div>
@@ -81,15 +80,15 @@ const Contact = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-          <div className="hidden lg:flex justify-center items-center">
-            <div className="relative w-full h-[500px] max-w-md animate-jump">
+          <div className="hidden lg:flex justify-center items-center ">
+            <div className="relative w-full h-[500px] max-w-md animate-jump select-none">
               <Image src={img} alt="Contact Illustration" fill className='object-contain' priority />
             </div>
           </div>
 
-          <div className="w-full">
+          <div className="w-full  p-10 rounded-3xl bg-white/5 backdrop-blur-md shadow-xl">
             <form ref={formRef} className="flex flex-col gap-5" onSubmit={sendEmail}>
-              
+
               <div className="relative group w-full">
                 <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-[#22c55e] transition-colors" />
                 <input

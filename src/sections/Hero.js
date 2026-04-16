@@ -38,11 +38,11 @@ const Hero = () => {
                         </p>
 
                         <div className='flex flex-wrap gap-2 sm:gap-4 pt-2 sm:pt-4'>
-                            <motion.button 
+                            <motion.button
                                 onClick={scrollToProjects}
-                                whileHover={{ 
+                                whileHover={{
                                     scale: 1.05,
-                                    boxShadow: "0px 0px 20px rgba(34, 197, 94, 0.6)" 
+                                    boxShadow: "0px 0px 20px rgba(34, 197, 94, 0.6)"
                                 }}
                                 whileTap={{ scale: 0.95 }}
                                 className='font-roboto px-6 sm:px-8 py-2.5 sm:py-3 cursor-pointer bg-gradient-to-r from-green-700 to-blue-500 text-white rounded-3xl hover:shadow-lg transition-all duration-300 text-sm sm:text-base whitespace-nowrap relative overflow-hidden group'
@@ -50,16 +50,16 @@ const Hero = () => {
                                 <span className="absolute inset-0 w-full h-full bg-white/10 group-hover:left-full transition-all duration-500 -left-full skew-x-12"></span>
                                 <span className="relative z-10">View My Projects</span>
                             </motion.button>
-
-                            <Link href="/resume.pdf" target='_blank'>
-                                <motion.button 
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                    className='font-roboto px-4 sm:px-8 py-2.5 sm:py-3 cursor-pointer bg-white text-black rounded-3xl hover:shadow-lg transition-all duration-300 text-sm sm:text-base whitespace-nowrap'
+                            <a href="/NaveedLatifResume.pdf" target="_blank" rel="noopener noreferrer">
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className='font-roboto px-4 sm:px-8 py-2.5 sm:py-3 cursor-pointer bg-white text-black rounded-3xl hover:shadow-lg transition-all duration-300 text-sm sm:text-base whitespace-nowrap'
+                                
                                 >
-                                    My Resume
-                                </motion.button>
-                            </Link>
+                                My Resume
+                            </motion.button>
+                                </a>
                         </div>
 
                         <div className='flex gap-3 sm:gap-4 md:gap-5 text-xl sm:text-2xl md:text-3xl font-medium text-green-400 font-roboto py-5'>
@@ -91,19 +91,19 @@ const Hero = () => {
                             <Link href="https://www.instagram.com/_.naveed._69" target='_blank' className='text-gray-400 hover:text-green-400 transition-colors duration-300'>
                                 <FaInstagram size={24} className='sm:w-7 sm:h-7' />
                             </Link>
-                            <Link href="https://facebook.com/naveedlatif" target='_blank' className='text-gray-400 hover:text-green-400 transition-colors duration-300'>
+                            <Link href="https://www.facebook.com/naveed.bhai.900" target='_blank' className='text-gray-400 hover:text-green-400 transition-colors duration-300'>
                                 <FaFacebook size={24} className='sm:w-7 sm:h-7' />
                             </Link>
                         </div>
                     </div>
 
-                    <div className='flex flex-col justify-center items-center order-1 lg:order-2'>
+                    <div className='select-none flex flex-col justify-center items-center order-1 lg:order-2'>
                         <div className='relative w-full max-w-[250px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-md aspect-square robot-float'>
                             <Image
                                 src={img}
                                 alt="Naveed Latif - Robot"
                                 fill
-                                className='object-contain drop-shadow-[0_0_50px_rgba(34,197,94,0.6)]'
+                                className=' object-contain drop-shadow-[0_0_50px_rgba(34,197,94,0.6)]'
                                 priority
                             />
                         </div>

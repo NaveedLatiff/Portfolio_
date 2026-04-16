@@ -7,11 +7,14 @@ import Contact from "@/sections/Contact"
 import Skills from "@/sections/Skills"
 import Projects from "@/sections/Projects"
 import Footer from "@/sections/Footer"
+import WhatsApp from "@/components/Whatsapp"
 
 const Page = () => {
   return (
-  <>
-    <ParticleBackground />
+
+    <>
+        <WhatsApp/>
+      <ParticleBackground />
       <CustomCursor />
       <section id="home">
         <Navbar />
@@ -23,15 +26,16 @@ const Page = () => {
       <section id="skills">
         <Skills />
       </section>
-      <section  id="contact">
+      <section id="projects">
+        <Projects />
+      </section>
+      <section id="contact">
         <Contact />
       </section>
-      <section id="projects">
-        <Projects/>
-      </section>
-      <Footer/>
-  </>
-  )
-}
+      <Footer />
+
+    </>
+    )
+  }
 
 export default Page

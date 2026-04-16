@@ -13,7 +13,7 @@ const Projects = () => {
 
     const projectData = [
         {
-            id: 1,
+            id: 3,
             title: "ShopWise",
             category: "Frontend",
             demo: "https://shopwise-naveed.netlify.app/",
@@ -21,7 +21,7 @@ const Projects = () => {
             tags: ["React", "Tailwind", "Redux", "Netlify"]
         },
         {
-            id: 2,
+            id: 4,
             title: "Works.Studio",
             category: "Frontend",
             demo: "https://workstudionaveed.netlify.app/",
@@ -29,7 +29,7 @@ const Projects = () => {
             tags: ["HTML", "CSS", "JavaScript", "GSAP"]
         },
         {
-            id: 3,
+            id: 5,
             title: "K27.Ca",
             category: "Frontend",
             demo: "https://k72ca.netlify.app/",
@@ -37,23 +37,16 @@ const Projects = () => {
             tags: ["Next.js", "Tailwind", "GSAP"]
         },
         {
-            id: 4,
+            id: 6,
             title: "GTA VI",
             category: "Frontend",
             demo: "https://naveed-gta.netlify.app/",
             github: "https://github.com/NaveedLatiff/GTA-VI-Website",
             tags: ["React", "Tailwind", "GSAP"]
         },
+        
         {
-            id: 5,
-            title: "Namaz Tracking App",
-            category: "Full Stack",
-            demo: "https://naveed-namaztrackingapp.netlify.app/index.html",
-            github: "https://github.com/NaveedLatiff/Namaz-Tracking-App",
-            tags: ["HTML", "CSS", "JavaScript", "Firebase"]
-        },
-        {
-            id: 6,
+            id: 7,
             title: "3D model",
             category: "Frontend",
             demo: "https://naveed-three.netlify.app/",
@@ -89,7 +82,7 @@ const Projects = () => {
                 ))}
             </div>
 
-            <div className="container mx-auto max-w-4xl font-roboto relative z-20">
+            <div className="container mx-auto max-w-4xl font-roboto relative z-20 ">
                 <Swiper
                     key={filter}
                     modules={[Navigation, Pagination, Autoplay]}
@@ -106,7 +99,7 @@ const Projects = () => {
                     className="pb-20 project-swiper"
                 >
                     {filteredProjects.map((project) => (
-                        <SwiperSlide key={project.id} className="h-full pb-2">
+                        <SwiperSlide key={project.id} className="h-full pb-2 select-none">
                             <motion.div
                                 layout
                                 initial={{ opacity: 0 }}

@@ -27,8 +27,8 @@ const OverlayMenu = ({ isOpen, toggleMenu, menuIconPosition }) => {
   const menuItems = [
     { name: 'Home', id: 'home' },
     { name: 'About', id: 'about' },
-    { name: 'Projects', id: 'projects' },
     { name: 'Skills', id: 'skills' },
+    { name: 'Projects', id: 'projects' },
     { name: 'Contact', id: 'contact' },
   ];
 

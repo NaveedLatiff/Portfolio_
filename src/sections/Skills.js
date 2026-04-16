@@ -9,37 +9,39 @@ import {
 import {
   SiMysql, SiPostgresql, SiRedis, SiNextdotjs, SiTailwindcss,
   SiMongodb, SiExpress, SiTypescript, SiKubernetes,
-  SiJenkins, SiNodemon, SiThreedotjs, SiFramer, SiGreensock
+  SiJenkins, SiNodemon, SiThreedotjs, SiFramer, SiGreensock,
+  SiNestjs
 } from 'react-icons/si';
 
 const Skills = () => {
-  const skills = [
-    { name: 'Git', icon: <FaGitAlt /> },
-    { name: 'Python', icon: <FaPython /> },
-    { name: 'MySQL', icon: <SiMysql /> },
-    { name: 'Postgres', icon: <SiPostgresql /> },
-    { name: 'Redis', icon: <SiRedis /> },
-    { name: 'AWS', icon: <FaAws /> },
-    { name: 'HTML', icon: <FaHtml5 /> },
-    { name: 'CSS', icon: <FaCss3Alt /> },
-    { name: 'JS', icon: <FaJs /> },
-    { name: 'React', icon: <FaReact /> },
-    { name: 'Next.js', icon: <SiNextdotjs /> },
-    { name: 'GSAP', icon: <SiGreensock /> },
-    { name: 'Framer', icon: <SiFramer /> },
-    { name: 'Three.js', icon: <SiThreedotjs /> },
-    { name: 'Tailwind', icon: <SiTailwindcss /> },
-    { name: 'Node.js', icon: <FaNodeJs /> },
-    { name: 'MongoDB', icon: <SiMongodb /> },
-    { name: 'Express', icon: <SiExpress /> },
-    { name: 'NPM', icon: <FaNpm /> },
-    { name: 'Nodemon', icon: <SiNodemon /> },
-    { name: 'TS', icon: <SiTypescript /> },
-    { name: 'Docker', icon: <FaDocker /> },
-    { name: 'K8s', icon: <SiKubernetes /> },
-    { name: 'Jenkins', icon: <SiJenkins /> },
-    { name: 'Linux', icon: <FaLinux /> },
-  ];
+ const skills = [
+  { name: 'Git', icon: <FaGitAlt /> },
+  { name: 'Python', icon: <FaPython /> },
+  { name: 'MySQL', icon: <SiMysql /> },
+  { name: 'Postgres', icon: <SiPostgresql /> },
+  { name: 'Redis', icon: <SiRedis /> },
+  { name: 'AWS', icon: <FaAws /> },
+  { name: 'HTML', icon: <FaHtml5 /> },
+  { name: 'CSS', icon: <FaCss3Alt /> },
+  { name: 'JS', icon: <FaJs /> },
+  { name: 'React', icon: <FaReact /> },
+  { name: 'Next.js', icon: <SiNextdotjs /> },
+  { name: 'GSAP', icon: <SiGreensock /> },
+  { name: 'Framer', icon: <SiFramer /> },
+  { name: 'Three.js', icon: <SiThreedotjs /> },
+  { name: 'Tailwind', icon: <SiTailwindcss /> },
+  { name: 'Node.js', icon: <FaNodeJs /> },
+  { name: 'NestJS', icon: <SiNestjs /> },
+  { name: 'MongoDB', icon: <SiMongodb /> },
+  { name: 'Express', icon: <SiExpress /> },
+  { name: 'NPM', icon: <FaNpm /> },
+  { name: 'Nodemon', icon: <SiNodemon /> },
+  { name: 'TS', icon: <SiTypescript /> },
+  { name: 'Docker', icon: <FaDocker /> },
+  { name: 'K8s', icon: <SiKubernetes /> },
+  { name: 'Jenkins', icon: <SiJenkins /> },
+  { name: 'Linux', icon: <FaLinux /> },
+];
 
  const row1 = skills.slice(0, 8);
   const row2 = skills.slice(8, 16);
@@ -77,8 +79,7 @@ const Skills = () => {
         <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white font-poppins'>Skills & Technologies</h1>
       </div>
 
-     <div className="relative flex flex-col gap-4">
-        {/* Side Fades for that clean edge look */}
+     <div className="relative flex flex-col gap-4 select-none">
         <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10" />
 

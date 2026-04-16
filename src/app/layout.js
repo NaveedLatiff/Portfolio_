@@ -18,7 +18,7 @@ export const roboto = Roboto({
 
 
 export const metadata = {
-  title: "Naveed Latif | Full-Stack Developer",
+  title: "Naveed Latif | Mern-Stack Developer",
   description:
     "Hi, I'm Naveed Latif. I build modern web applications using JavaScript, Next.js, and cloud technologies. Explore my projects and skills.",
 };
