@@ -15,7 +15,7 @@ const Footer = () => {
     };
 
     return (
-        <footer className='w-full relative bg-black z-999 border-t border-green-500/20 overflow-hidden'>
+        <footer className='w-full relative bg-black z-998 border-t border-green-500/20 overflow-hidden'>
             <div className='absolute top-20 right-20 w-52 h-52 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-full blur-3xl animate-pulse'></div>
             <div className='absolute bottom-20 left-20 w-52 h-52 bg-gradient-to-br from-green-400/20 to-teal-500/20 rounded-full blur-3xl animate-pulse'></div>
 

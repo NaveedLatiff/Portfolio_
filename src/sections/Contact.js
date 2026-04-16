@@ -52,7 +52,7 @@ const Contact = () => {
     <section id="contact" className="min-h-screen w-full relative z-999 flex flex-col items-center py-5 overflow-hidden">
 
       {notification.show && (
-        <div className={`fixed top-5 right-5 z-[1000] flex items-center gap-3 px-6 py-4 rounded-2xl shadow-2xl transition-all duration-500 animate-in fade-in slide-in-from-right-10 ${notification.type === 'success' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
+        <div className={`fixed top-5 right-5 z-9999 flex items-center gap-3 px-6 py-4 rounded-2xl shadow-2xl transition-all duration-500 animate-in fade-in slide-in-from-right-10 ${notification.type === 'success' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
           }`}>
           {notification.type === 'success' ? <FaCheckCircle /> : <FaExclamationCircle />}
           <p className="font-roboto font-medium">{notification.message}</p>

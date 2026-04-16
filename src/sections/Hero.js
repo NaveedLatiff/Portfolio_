@@ -50,16 +50,21 @@ const Hero = () => {
                                 <span className="absolute inset-0 w-full h-full bg-white/10 group-hover:left-full transition-all duration-500 -left-full skew-x-12"></span>
                                 <span className="relative z-10">View My Projects</span>
                             </motion.button>
-                            <a href="/NaveedLatifResume.pdf" target="_blank" rel="noopener noreferrer">
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className='font-roboto px-4 sm:px-8 py-2.5 sm:py-3 cursor-pointer bg-white text-black rounded-3xl hover:shadow-lg transition-all duration-300 text-sm sm:text-base whitespace-nowrap'
-                                
+                            <a
+                                href="/NaveedLatifResume.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                locale={false} 
+                            >
+                                <motion.button
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className='font-roboto px-4 sm:px-8 py-2.5 sm:py-3 cursor-pointer bg-white text-black rounded-3xl hover:shadow-lg transition-all duration-300 text-sm sm:text-base whitespace-nowrap'
+
                                 >
-                                My Resume
-                            </motion.button>
-                                </a>
+                                    My Resume
+                                </motion.button>
+                            </a>
                         </div>
 
                         <div className='flex gap-3 sm:gap-4 md:gap-5 text-xl sm:text-2xl md:text-3xl font-medium text-green-400 font-roboto py-5'>

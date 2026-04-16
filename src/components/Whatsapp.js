@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -15,16 +15,17 @@ const WhatsApp = () => {
     };
 
     return (
-        <div className="fixed bottom-8 right-8 z-9999 flex items-center group">
-            <motion.span 
+        <div className="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 z-9999 flex items-center group">
+            
+           <motion.span 
                 initial={{ opacity: 0, x: 20 }}
                 whileHover={{ opacity: 1, x: 0 }}
-                className="mr-3 px-4 py-2 text-sm font-medium bg-black text-white rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap"
+                className="hidden sm:block mr-3 px-4 py-2 text-sm font-medium bg-black text-white rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap"
             >
                 Let's have a Chat 
             </motion.span>
 
-          <motion.div
+            <motion.div
                 onClick={handleClick}
                 whileHover={{ scale: 1.15 }}
                 whileTap={{ scale: 0.9 }}
@@ -42,11 +43,11 @@ const WhatsApp = () => {
                         ease: "easeInOut"
                     }
                 }}
-                className="relative bg-gradient-to-br from-green-500 to-green-600 p-4 rounded-full cursor-pointer shadow-2xl hover:shadow-green-500/50 transition-all duration-300 group"
+               className="relative bg-gradient-to-br from-green-500 to-green-600 p-3 sm:p-4 rounded-full cursor-pointer shadow-2xl hover:shadow-green-500/50 transition-all duration-300 group"
             >
                 <div className="absolute inset-0 rounded-full bg-green-400 blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
                 
-               <FaWhatsapp className="relative text-white text-3xl" />
+               <FaWhatsapp className="relative text-white text-2xl sm:text-3xl" />
             </motion.div>
         </div>
     );
