@@ -13,12 +13,20 @@ const Projects = () => {
 
     const projectData = [
         {
+            id: 2,
+            title: "Pingly",
+            category: "Full Stack",
+            demo: "http://23.21.144.198/",
+            github: "https://github.com/NaveedLatiff/Pingly",
+            tags: ["Nextjs", "Nodejs", "MongoDB", "Socket.IO" ]
+        },
+        {
             id: 3,
             title: "ShopWise",
             category: "Frontend",
             demo: "https://shopwise-naveed.netlify.app/",
             github: "https://github.com/NaveedLatiff/ShopWise",
-            tags: ["React", "Tailwind", "Redux", "Netlify"]
+            tags: ["React", "Tailwind", "Redux",]
         },
         {
             id: 4,
