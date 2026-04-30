@@ -12,6 +12,15 @@ const Projects = () => {
     const [filter, setFilter] = useState('All');
 
     const projectData = [
+        
+        {
+            id: 1,
+            title: "Jobify",
+            category: "Full Stack",
+            demo: "http://54.144.102.15/",
+            github: "https://github.com/NaveedLatiff/Jobify",
+            tags: ["Nextjs", "Nodejs", "PostgreSql" ]
+        },
         {
             id: 2,
             title: "Pingly",
