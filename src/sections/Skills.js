@@ -98,8 +98,10 @@ const Skills = () => {
     </div>
   );
 
-  return (
-    <section className="bg-black relative min-h-screen py-20 z-999 w-full overflow-hidden">
+ return (
+    <section className="bg-black relative py-12 md:py-20 z-999 w-full overflow-hidden"> 
+      {/* Changed min-h-screen to h-auto (default) and reduced padding for mobile */}
+      
       <div className="text-center mb-8 md:mb-12">
         <h2 className="text-green-400 text-lg sm:text-xl font-semibold mb-2 font-roboto">
           Expertise
@@ -109,9 +111,10 @@ const Skills = () => {
         </h1>
       </div>
 
-      <div className="relative flex flex-col gap-4 select-none">
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10" />
+      <div className="relative flex flex-col gap-2 sm:gap-4 select-none">
+        {/* Adjusted gap for mobile to keep rows tighter */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-black to-transparent z-10" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-black to-transparent z-10" />
 
         <SliderRow items={row1} duration={25} />
         <SliderRow items={row2} reverse duration={35} />
@@ -121,4 +124,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default Skills

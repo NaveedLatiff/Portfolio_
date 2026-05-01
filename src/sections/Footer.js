@@ -28,7 +28,7 @@ const Footer = () => {
                             NAVEED <span className='text-green-400'>LATIF</span>
                         </h3>
                         <p className='text-gray-400 text-sm leading-relaxed font-roboto'>
-                            Full-Stack Developer passionate about building exceptional digital experiences with modern technologies.
+                            MERN-Stack Developer passionate about building exceptional digital experiences with modern technologies.
                         </p>
                         <div className='flex gap-4 pt-2'>
                             <a href="https://www.linkedin.com/in/naveed-latif-9702b3287/" target='_blank' rel="noopener noreferrer" className='text-gray-400 hover:text-green-400 transition-colors duration-300'>
@@ -80,7 +80,7 @@ const Footer = () => {
                     <div className='space-y-4'>
                         <h4 className='text-lg font-semibold text-white font-poppins'>Services</h4>
                         <ul className='space-y-2'>
-                            <li className='text-gray-400 text-sm font-roboto'>Full-Stack Development</li>
+                            <li className='text-gray-400 text-sm font-roboto'>Mern Stack Development</li>
                             <li className='text-gray-400 text-sm font-roboto'>DevOps</li>
                             <li className='text-gray-400 text-sm font-roboto'>Database Administrator</li>
                         </ul>

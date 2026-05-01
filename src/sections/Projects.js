@@ -17,7 +17,7 @@ import shopwise from "../assests/shopwise.png";
 import workstudio from "../assests/workstudio.png";
 
 const Projects = () => {
-  const [filter, setFilter] = useState("All")
+  const [filter, setFilter] = useState("All");
 
   const projectData = [
     {
@@ -98,16 +98,20 @@ const Projects = () => {
         </h1>
       </div>
 
-      <div className="flex justify-center gap-4 mb-16 relative z-20 ">
+      <div className="flex justify-center gap-2 sm:gap-4 mb-10 md:mb-16 relative z-20">
         {["All", "Full Stack", "Frontend"].map((cat) => (
           <button
             key={cat}
             onClick={() => setFilter(cat)}
-            className={`px-8 py-2 rounded-full text-[10px] sm:text-sm font-roboto cursor-pointer transition-all duration-300 border ${
-              filter === cat
-                ? "bg-green-500 border-green-500 text-black shadow-[0_0_20px_rgba(34,197,94,0.4)]"
-                : "border-zinc-800 text-zinc-400 hover:text-white "
-            }`}
+            className={`
+        px-4 sm:px-8 py-2 rounded-full text-[10px] sm:text-sm 
+        font-roboto cursor-pointer transition-all duration-300 border 
+        ${
+          filter === cat
+            ? "bg-green-500 border-green-500 text-black shadow-[0_0_20px_rgba(34,197,94,0.4)]"
+            : "border-zinc-800 text-zinc-400 hover:text-white"
+        }
+      `}
           >
             {cat}
           </button>
@@ -123,10 +127,10 @@ const Projects = () => {
           loop={filteredProjects.length >= 2}
           navigation
           pagination={{ clickable: true }}
-          autoplay={{ 
-            delay: 3000, 
+          autoplay={{
+            delay: 3000,
             disableOnInteraction: false,
-            pauseOnMouseEnter: true 
+            pauseOnMouseEnter: true,
           }}
           breakpoints={{
             768: { slidesPerView: 2 },
@@ -152,7 +156,7 @@ const Projects = () => {
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover object-top transition-transform duration-700 group-hover/img:scale-110"
-                    placeholder="blur" 
+                    placeholder="blur"
                   />
                   <div className="absolute inset-0 bg-black/30 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <FaExternalLinkAlt className="text-green-500" size={30} />

@@ -28,7 +28,7 @@ const Hero = () => {
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 w-full'>
 
                     <div className='flex flex-col justify-center space-y-4 sm:space-y-1 order-2 lg:order-1'>
-                        <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight font-poppins pt-4'>
+                        <h1 className='text-3xl sm:text-4xl  md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight font-poppins lg:pt-11'>
                             Hello, I'm <span className='text-green-400'>Naveed Latif</span>
                         </h1>
 
@@ -51,7 +51,7 @@ const Hero = () => {
                                 <span className="relative z-10">View My Projects</span>
                             </motion.button>
                             <a
-                                href="/NaveedLatifResume.pdf"
+                                href="/NaveedLatifMernStack.jpg"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 locale={false} 
