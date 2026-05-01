@@ -18,7 +18,7 @@ const Projects = () => {
             title: "Jobify",
             category: "Full Stack",
             demo: "http://54.144.102.15/",
-            github: "https://github.com/NaveedLatiff/Jobify",
+            github: "http://54.144.102.15/posted-jobs",
             tags: ["Nextjs", "Nodejs", "PostgreSql" ]
         },
         {
