@@ -33,7 +33,7 @@ const Projects = () => {
       id: 2,
       title: "Pingly",
       category: "Full Stack",
-      demo: "http://23.21.144.198/",
+      demo: "http://54.242.80.240:3000/",
       github: "https://github.com/NaveedLatiff/Pingly",
       image: pingly,
       tags: ["Nextjs", "Nodejs", "MongoDB", "Socket.IO"],
