@@ -51,7 +51,7 @@ const Hero = () => {
                                 <span className="relative z-10">View My Projects</span>
                             </motion.button>
                             <a
-                                href="/NaveedLatifMernStack.jpg"
+                                href="/NaveedLatifResume.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 locale={false} 
